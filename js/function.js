@@ -4,11 +4,6 @@
 	var $window = $(window); 
 	var $body = $('body'); 
 
-	/* Preloader Effect */
-	$window.on('load', function(){
-		$(".preloader").fadeOut(600);
-	});
-
 	/* Sticky Header */	
 	if($('.active-sticky-header').length){
 		$window.on('resize', function(){
