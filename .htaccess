@@ -22,6 +22,21 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 ErrorDocument 404 /404.html
 
 # -------------------------------------------------------
+# Remove .html Extension (Clean URLs)
+# -------------------------------------------------------
+# If the request is not a directory and not a real file,
+# try appending .html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
+
+# Redirect .html URLs to clean URLs (SEO redirect)
+RewriteCond %{THE_REQUEST} \s/(.+?)\.html[\s?] [NC]
+RewriteCond %{REQUEST_URI} !^/404\.html$
+RewriteRule ^ /%1 [R=301,L]
+
+# -------------------------------------------------------
 # Security Headers
 # -------------------------------------------------------
 <IfModule mod_headers.c>
