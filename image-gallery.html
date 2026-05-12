@@ -105,84 +105,915 @@
     <!-- Page Header Section End -->
 
     <!-- Photo Gallery Start -->
+    <style>
+        .video-gallery-item { position: relative; overflow: hidden; cursor: pointer; }
+        .video-gallery-item video { width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
+        .play-btn-overlay {
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 64px; height: 64px;
+            background: rgba(255,255,255,0.88);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 24px; color: #1a1a1a;
+            pointer-events: none; z-index: 2;
+            transition: background 0.25s, transform 0.25s;
+        }
+        .video-gallery-item:hover .play-btn-overlay {
+            background: rgba(255,255,255,1);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        .video-popup-wrap { background: #000; text-align: center; padding: 0; }
+        .video-popup-wrap video { width: 100%; max-width: 960px; max-height: 80vh; display: block; margin: 0 auto; }
+        .mfp-content .video-popup-wrap { border-radius: 4px; overflow: hidden; }
+    </style>
     <div class="page-gallery">
         <div class="container">
             <!-- gallery section start -->
             <div class="row gallery-items page-gallery-box">
+
                 <div class="col-lg-4 col-6">
-                    <!-- Image Gallery start -->
                     <div class="photo-gallery wow fadeInUp">
-                        <a href="images/gallery-1.jpg" data-cursor-text="View">
+                        <a href="images/gallery/jolesfarm1.jpeg" class="gallery-image-popup" data-cursor-text="View">
                             <figure class="image-anime">
-                                <img src="images/gallery-1.jpg" alt="">
+                                <img src="images/gallery/jolesfarm1.jpeg" alt="Joles Farm">
                             </figure>
                         </a>
                     </div>
-                    <!-- Image Gallery end -->
                 </div>
 
                 <div class="col-lg-4 col-6">
-                    <!-- Image Gallery start -->
                     <div class="photo-gallery wow fadeInUp" data-wow-delay="0.2s">
-                        <a href="images/gallery-2.jpg" data-cursor-text="View">
+                        <a href="images/gallery/jolesfarm2.jpeg" class="gallery-image-popup" data-cursor-text="View">
                             <figure class="image-anime">
-                                <img src="images/gallery-2.jpg" alt="">
+                                <img src="images/gallery/jolesfarm2.jpeg" alt="Joles Farm">
                             </figure>
                         </a>
                     </div>
-                    <!-- Image Gallery end -->
                 </div>
 
                 <div class="col-lg-4 col-6">
-                    <!-- Image Gallery start -->
                     <div class="photo-gallery wow fadeInUp" data-wow-delay="0.4s">
-                        <a href="images/gallery-3.jpg" data-cursor-text="View">
+                        <a href="images/gallery/jolesfarm3.jpeg" class="gallery-image-popup" data-cursor-text="View">
                             <figure class="image-anime">
-                                <img src="images/gallery-3.jpg" alt="">
+                                <img src="images/gallery/jolesfarm3.jpeg" alt="Joles Farm">
                             </figure>
                         </a>
                     </div>
-                    <!-- Image Gallery end -->
                 </div>
 
                 <div class="col-lg-4 col-6">
-                    <!-- Image Gallery start -->
-                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.6s">
-                        <a href="images/gallery-4.jpg" data-cursor-text="View">
+                    <div class="photo-gallery wow fadeInUp">
+                        <a href="images/gallery/jolesfarm4.jpeg" class="gallery-image-popup" data-cursor-text="View">
                             <figure class="image-anime">
-                                <img src="images/gallery-4.jpg" alt="">
+                                <img src="images/gallery/jolesfarm4.jpeg" alt="Joles Farm">
                             </figure>
                         </a>
                     </div>
-                    <!-- Image Gallery end -->
                 </div>
 
                 <div class="col-lg-4 col-6">
-                    <!-- Image Gallery start -->
-                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.8s">
-                        <a href="images/gallery-5.jpg" data-cursor-text="View">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="images/gallery/jolesfarm5.jpeg" class="gallery-image-popup" data-cursor-text="View">
                             <figure class="image-anime">
-                                <img src="images/gallery-5.jpg" alt="">
+                                <img src="images/gallery/jolesfarm5.jpeg" alt="Joles Farm">
                             </figure>
                         </a>
                     </div>
-                    <!-- Image Gallery end -->
                 </div>
 
                 <div class="col-lg-4 col-6">
-                    <!-- Image Gallery start -->
-                    <div class="photo-gallery wow fadeInUp" data-wow-delay="1s">
-                        <a href="images/gallery-6.jpg" data-cursor-text="View">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="images/gallery/jolesfarm6.jpeg" class="gallery-image-popup" data-cursor-text="View">
                             <figure class="image-anime">
-                                <img src="images/gallery-6.jpg" alt="">
+                                <img src="images/gallery/jolesfarm6.jpeg" alt="Joles Farm">
                             </figure>
                         </a>
                     </div>
-                    <!-- Image Gallery end -->
                 </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp">
+                        <a href="images/gallery/jolesfarm7.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm7.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="images/gallery/jolesfarm8.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm8.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="images/gallery/jolesfarm9.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm9.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp">
+                        <a href="images/gallery/jolesfarm10.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm10.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="images/gallery/jolesfarm11.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm11.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="images/gallery/jolesfarm12.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm12.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp">
+                        <a href="images/gallery/jolesfarm13.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm13.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="images/gallery/jolesfarm14.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm14.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="images/gallery/jolesfarm15.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm15.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp">
+                        <a href="images/gallery/jolesfarm16.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm16.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="images/gallery/jolesfarm17.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm17.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="images/gallery/jolesfarm18.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm18.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp">
+                        <a href="images/gallery/jolesfarm19.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm19.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="images/gallery/jolesfarm20.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm20.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="images/gallery/jolesfarm21.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm21.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp">
+                        <a href="images/gallery/jolesfarm22.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm22.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="images/gallery/jolesfarm23.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm23.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="images/gallery/jolesfarm24.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm24.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp">
+                        <a href="images/gallery/jolesfarm25.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm25.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="images/gallery/jolesfarm26.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm26.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="images/gallery/jolesfarm27.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm27.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp">
+                        <a href="images/gallery/jolesfarm28.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm28.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="images/gallery/jolesfarm29.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm29.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="images/gallery/jolesfarm30.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm30.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp">
+                        <a href="images/gallery/jolesfarm31.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm31.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="images/gallery/jolesfarm32.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm32.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="images/gallery/jolesfarm33.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm33.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp">
+                        <a href="images/gallery/jolesfarm34.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm34.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="images/gallery/jolesfarm35.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm35.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="images/gallery/jolesfarm36.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm36.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp">
+                        <a href="images/gallery/jolesfarm37.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm37.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="images/gallery/jolesfarm38.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm38.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="images/gallery/jolesfarm39.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm39.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp">
+                        <a href="images/gallery/jolesfarm40.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm40.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="images/gallery/jolesfarm41.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm41.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="images/gallery/jolesfarm42.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm42.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp">
+                        <a href="images/gallery/jolesfarm43.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm43.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="images/gallery/jolesfarm44.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm44.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="images/gallery/jolesfarm45.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm45.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp">
+                        <a href="images/gallery/jolesfarm46.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm46.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="images/gallery/jolesfarm47.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm47.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="images/gallery/jolesfarm48.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm48.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp">
+                        <a href="images/gallery/jolesfarm49.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm49.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="images/gallery/jolesfarm50.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm50.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="images/gallery/jolesfarm51.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm51.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp">
+                        <a href="images/gallery/jolesfarm52.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm52.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="images/gallery/jolesfarm53.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm53.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="images/gallery/jolesfarm54.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm54.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp">
+                        <a href="images/gallery/jolesfarm55.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm55.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="images/gallery/jolesfarm56.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm56.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="images/gallery/jolesfarm57.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm57.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp">
+                        <a href="images/gallery/jolesfarm58.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm58.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="images/gallery/jolesfarm59.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm59.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="images/gallery/jolesfarm60.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm60.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp">
+                        <a href="images/gallery/jolesfarm61.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm61.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="images/gallery/jolesfarm62.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm62.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="images/gallery/jolesfarm63.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm63.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp">
+                        <a href="images/gallery/jolesfarm64.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm64.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="images/gallery/jolesfarm65.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm65.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="images/gallery/jolesfarm66.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm66.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp">
+                        <a href="images/gallery/jolesfarm67.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm67.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="images/gallery/jolesfarm68.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm68.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="images/gallery/jolesfarm69.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm69.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp">
+                        <a href="images/gallery/jolesfarm70.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm70.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="images/gallery/jolesfarm71.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm71.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="images/gallery/jolesfarm72.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm72.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp">
+                        <a href="images/gallery/jolesfarm73.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm73.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="images/gallery/jolesfarm74.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm74.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="images/gallery/jolesfarm75.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm75.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp">
+                        <a href="images/gallery/jolesfarm76.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm76.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="images/gallery/jolesfarm77.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm77.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="images/gallery/jolesfarm78.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm78.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp">
+                        <a href="images/gallery/jolesfarm79.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm79.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="images/gallery/jolesfarm80.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm80.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="images/gallery/jolesfarm81.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm81.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery wow fadeInUp">
+                        <a href="images/gallery/jolesfarm82.jpeg" class="gallery-image-popup" data-cursor-text="View">
+                            <figure class="image-anime">
+                                <img src="images/gallery/jolesfarm82.jpeg" alt="Joles Farm">
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Videos -->
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery video-gallery-item wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="#video-popup-83" class="gallery-video-popup" data-cursor-text="Play">
+                            <figure class="image-anime">
+                                <video src="images/gallery/jolesfarm83.mp4" muted preload="metadata"></video>
+                                <div class="play-btn-overlay"><i class="fa-solid fa-play"></i></div>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery video-gallery-item wow fadeInUp" data-wow-delay="0.4s">
+                        <a href="#video-popup-84" class="gallery-video-popup" data-cursor-text="Play">
+                            <figure class="image-anime">
+                                <video src="images/gallery/jolesfarm84.mp4" muted preload="metadata"></video>
+                                <div class="play-btn-overlay"><i class="fa-solid fa-play"></i></div>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery video-gallery-item wow fadeInUp">
+                        <a href="#video-popup-85" class="gallery-video-popup" data-cursor-text="Play">
+                            <figure class="image-anime">
+                                <video src="images/gallery/jolesfarm85.mp4" muted preload="metadata"></video>
+                                <div class="play-btn-overlay"><i class="fa-solid fa-play"></i></div>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-6">
+                    <div class="photo-gallery video-gallery-item wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="#video-popup-86" class="gallery-video-popup" data-cursor-text="Play">
+                            <figure class="image-anime">
+                                <video src="images/gallery/jolesfarm86.mp4" muted preload="metadata"></video>
+                                <div class="play-btn-overlay"><i class="fa-solid fa-play"></i></div>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
             </div>
             <!-- gallery section end -->
         </div>
+    </div>
+
+    <!-- Hidden Video Popup Containers -->
+    <div id="video-popup-83" class="mfp-hide video-popup-wrap">
+        <video controls src="images/gallery/jolesfarm83.mp4"></video>
+    </div>
+    <div id="video-popup-84" class="mfp-hide video-popup-wrap">
+        <video controls src="images/gallery/jolesfarm84.mp4"></video>
+    </div>
+    <div id="video-popup-85" class="mfp-hide video-popup-wrap">
+        <video controls src="images/gallery/jolesfarm85.mp4"></video>
+    </div>
+    <div id="video-popup-86" class="mfp-hide video-popup-wrap">
+        <video controls src="images/gallery/jolesfarm86.mp4"></video>
     </div>
     <!-- Photo Gallery End -->
 
@@ -339,5 +1170,34 @@
     <script src="js/wow.min.js"></script>
     <!-- Main Custom js file -->
     <script src="js/function.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Image gallery lightbox
+            $('.gallery-image-popup').magnificPopup({
+                type: 'image',
+                gallery: { enabled: true },
+                image: { titleSrc: 'alt' },
+                removalDelay: 300,
+                mainClass: 'mfp-fade'
+            });
+
+            // Video gallery inline popup
+            $('.gallery-video-popup').magnificPopup({
+                type: 'inline',
+                midClick: true,
+                removalDelay: 300,
+                mainClass: 'mfp-fade',
+                callbacks: {
+                    close: function () {
+                        // Stop video on popup close
+                        $(this.content).find('video').each(function () {
+                            this.pause();
+                            this.currentTime = 0;
+                        });
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
